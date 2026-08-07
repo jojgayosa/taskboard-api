@@ -1,15 +1,8 @@
-﻿using AutoMapper;
-using MediatR;
+﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TaskBoard.Application.Common.Exceptions;
 using TaskBoard.Application.Common.Interfaces;
 using TaskBoard.Application.Common.Models;
-using TaskBoard.Application.Features.Projects.DTOs;
 using TaskBoard.Domain.Entities;
 
 namespace TaskBoard.Application.Features.Projects.Commands
@@ -20,16 +13,13 @@ namespace TaskBoard.Application.Features.Projects.Commands
     {
         private readonly IApplicationDbContext _context;
         private readonly ICurrentUserService _currentUser;
-        private readonly IMapper _mapper;
 
         public DeleteProjectCommandHandler(
             IApplicationDbContext context,
-            ICurrentUserService currentUser,
-            IMapper mapper)
+            ICurrentUserService currentUser)
         {
             _context = context;
             _currentUser = currentUser;
-            _mapper = mapper;
         }
 
         public async Task<Result> Handle(DeleteProjectCommand request, CancellationToken cancellationToken)
@@ -42,7 +32,7 @@ namespace TaskBoard.Application.Features.Projects.Commands
                 ?? throw new NotFoundException(nameof(Project), request.Id);
 
             if (project.OwnerId != _currentUser.UserId)
-                throw new UnauthorizedAccessException("Only the project owner can delete this project.");
+                throw new ForbiddenException("Only the project owner can delete this project.");
 
             //Cascade soft delete - mark everything under this project as deleted
             foreach (var column in project.Columns)

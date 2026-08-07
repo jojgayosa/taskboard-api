@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.37314.3 d17.14
+VisualStudioVersion = 17.14.37314.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskBoard.API", "TaskBoard.API\TaskBoard.API.csproj", "{ADB7D414-5882-4689-84CD-5BD8C1159E94}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskBoard.Persistence", "TaskBoard.Persistence\TaskBoard.Persistence.csproj", "{FD5BC021-6DAC-4E81-8EF4-EB9620382C62}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskBoard.Infrastructure", "TaskBoard.Infrastructure\TaskBoard.Infrastructure.csproj", "{E7BE7DFC-220E-4F75-AAFC-0FA7969B5C18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskBoard.Tests", "TaskBoard.Tests\TaskBoard.Tests.csproj", "{022A1AAE-296A-49B2-8805-C92B18B444E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{E7BE7DFC-220E-4F75-AAFC-0FA7969B5C18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7BE7DFC-220E-4F75-AAFC-0FA7969B5C18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7BE7DFC-220E-4F75-AAFC-0FA7969B5C18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{022A1AAE-296A-49B2-8805-C92B18B444E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{022A1AAE-296A-49B2-8805-C92B18B444E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{022A1AAE-296A-49B2-8805-C92B18B444E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{022A1AAE-296A-49B2-8805-C92B18B444E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

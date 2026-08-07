@@ -29,12 +29,12 @@ namespace TaskBoard.Application.Features.Tasks.Commands
         }
     }
 
-    public class MoveClassCommandHandler : IRequestHandler<MoveTaskCommand, Result>
+    public class MoveTaskCommandHandler : IRequestHandler<MoveTaskCommand, Result>
     {
         private readonly IApplicationDbContext _context;
         private readonly ICurrentUserService _currentUser;
 
-        public MoveClassCommandHandler(
+        public MoveTaskCommandHandler(
             IApplicationDbContext context,
             ICurrentUserService currentUser)
         {

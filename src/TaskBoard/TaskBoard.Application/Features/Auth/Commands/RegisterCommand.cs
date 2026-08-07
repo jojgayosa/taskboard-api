@@ -62,14 +62,14 @@ namespace TaskBoard.Application.Features.Auth.Commands
                 .AnyAsync(u => u.Email == request.Email, cancellationToken);
 
             if (emailExist)
-                return Result<AuthResponseDto>.Failure("Email already registered.");
+                return Result<AuthResponseDto>.Failure("Email is already registered.");
 
             //Check if username already exist
             var nameExist = await _context.Users
                 .AnyAsync(u => u.Username == request.Username, cancellationToken);
 
             if (nameExist) 
-                return Result<AuthResponseDto>.Failure("Username already taken.");
+                return Result<AuthResponseDto>.Failure("Username is already taken.");
 
             // Hash password first, then pass the hash to User.Create
             // Domain never sees the plain-text password
